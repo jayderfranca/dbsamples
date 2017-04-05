@@ -1,9 +1,8 @@
 package db
 
 type Oracle struct {
-	connection C
+	conn Connection
 }
 
 func (db *Oracle) ValidateString(string string) error {
-
 }
