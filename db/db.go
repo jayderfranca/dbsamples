@@ -1,19 +1,18 @@
-package defs
+package db
 
 type (
 
 	// Connection representa os dados de uma conexao com banco de dados
-	Connection struct {
-	}
+	Connection struct{}
 
 	// Database representa os metodos basicos para um banco de dados
 	Database interface {
 
-		// ValidateString realiza a validacao da string de conexao para o banco em questao
-		ValidateString(string string) error
+		// ValidateDsn realiza a validacao da string de conexao para o banco em questao
+		ValidateDsn(dsn string) error
 
 		// Connect realiza uma conexao com o banco de dados
-		Connect(string string) (*Connection, error)
+		Connect(dsn string) (*Connection, error)
 
 		// Select busca registros no banco de dados
 		Select(table string, where string) ([]string, error)
